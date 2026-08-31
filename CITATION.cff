@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If this reproduction supports your work, please cite the ED-DSCR manuscript."
+title: "Entropy Discrepancy-Guided Depth-Spatial Correlation Reasoning for Remote Sensing Semantic Segmentation"
+authors:
+  - family-names: Deng
+    given-names: Yiming
+  - family-names: Liu
+    given-names: Hongning
+  - family-names: Sun
+    given-names: Hui
+  - family-names: Wang
+    given-names: Guanglu
+  - family-names: Liu
+    given-names: Xinyue
+year: 2026
+license: MIT
