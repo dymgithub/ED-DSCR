@@ -1,0 +1,32 @@
+seed: 42
+data:
+  root: data/vaihingen
+  num_classes: 6
+  class_names: [impervious_surface, building, low_vegetation, tree, car, clutter]
+  palette: [[255,255,255], [0,0,255], [0,255,255], [0,255,0], [255,255,0], [255,0,0]]
+  crop_size: 256
+  stride: 170
+  ignore_index: 255
+model:
+  backbone: segformer_b5
+  channels: 256
+  edar_iterations: 3
+  pretrained: true
+  ignore_index: 255
+  ddg_base_channels: 32
+loss:
+  lambda_ddg: 1.0
+  lambda_edar: 0.5
+train:
+  batch_size: 8
+  iterations: 80000
+  lr: 0.00006
+  min_lr: 0.000001
+  warmup_iterations: 1500
+  betas: [0.9, 0.999]
+  weight_decay: 0.0001
+  workers: 4
+  amp: true
+  checkpoint_interval: 5000
+  output_dir: outputs/vaihingen
+
