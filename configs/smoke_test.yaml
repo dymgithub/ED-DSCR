@@ -1,0 +1,29 @@
+seed: 1
+data:
+  root: data/smoke
+  num_classes: 6
+  class_names: [c0, c1, c2, c3, c4, c5]
+  palette: [[0,0,0], [255,0,0], [0,255,0], [0,0,255], [255,255,0], [255,255,255]]
+  crop_size: 64
+  stride: 48
+  ignore_index: 255
+model:
+  backbone: tiny
+  channels: 32
+  edar_iterations: 3
+  pretrained: false
+  ignore_index: 255
+  ddg_base_channels: 8
+loss: {lambda_ddg: 1.0, lambda_edar: 0.5}
+train:
+  batch_size: 2
+  iterations: 2
+  lr: 0.00006
+  min_lr: 0.000001
+  warmup_iterations: 1
+  betas: [0.9, 0.999]
+  weight_decay: 0.0001
+  workers: 0
+  amp: false
+  checkpoint_interval: 1
+  output_dir: outputs/smoke
