@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ed-dscr"
+version = "0.1.0"
+description = "Faithful, independent reproduction of ED-DSCR for remote-sensing semantic segmentation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.21",
+  "Pillow>=9.0",
+  "PyYAML>=6.0",
+  "torch>=1.12",
+  "torchvision>=0.13",
+  "transformers>=4.30",
+  "tqdm>=4.64",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+depth = ["opencv-python>=4.7"]
+
+[tool.setuptools.packages.find]
+include = ["ed_dscr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
